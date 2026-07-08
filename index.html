@@ -93,15 +93,17 @@ fetch("./data/puddle.geojson")
             // ここを自由に編集してください
             //
             layer.bindPopup(`
-                <b>${p.name}</b><br>
-
                 ID：${p.id}<br>
 
-                種別：${p.highway}<br>
+                南北の長さ：${p.range_ns}m<br>
 
-                ランプ：${p.lamp_type}<br>
+                東西の長さ：${p.range_ew}m<br>
 
-                支柱：${p.support}
+                概算面積：${p.range_ns * p.range_ew * 0.75}㎡
+
+                深さ：${p.depth}cm
+
+                追加日：${p.date}
             `);
 
         }
